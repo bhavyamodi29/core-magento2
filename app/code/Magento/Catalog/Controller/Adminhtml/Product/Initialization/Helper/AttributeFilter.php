@@ -111,8 +111,7 @@ class AttributeFilter
             // For non-numeric types set the attributeValue to 'false' to trigger their removal from the db
             if ($attributeType === 'varchar' || $attributeType === 'text' || $attributeType === 'datetime') {
                 $attribute->setIsRequired(false);
-                $productData[$attributeCode] = $attributeIsUserDefined ? false :
-                    ($attribute->getDefaultValue() ?: false);
+                $productData[$attributeCode] = false;
             } else {
                 $productData[$attributeCode] = null;
             }
